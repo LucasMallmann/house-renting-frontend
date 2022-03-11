@@ -10,7 +10,6 @@ export const theme = extendTheme({
   },
 
   fonts: {
-    body: 'Open Sans',
-    heading: 'Noto Serif'
+    body: 'Roboto'
   }
 })
