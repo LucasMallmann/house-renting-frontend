@@ -1,4 +1,5 @@
 // import { ChakraNextImage } from '@/components/ChakraImage'
+import { HouseCard } from '@/components/HouseCard'
 import { Input } from '@/components/SearchInput'
 import {
   Heading,
@@ -11,7 +12,9 @@ import {
   TabPanel,
   VStack,
   Stack,
-  Button
+  Button,
+  Grid,
+  GridItem
 } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import Image from 'next/image'
@@ -24,6 +27,8 @@ const Home: NextPage = () => {
     <Box as="main" mt={24}>
       <Flex
         h={670}
+        maxWidth={1920}
+        mx="auto"
         p={12}
         position={'relative'}
         _after={{
@@ -127,6 +132,9 @@ const Home: NextPage = () => {
                       _hover={{
                         background: 'red.600'
                       }}
+                      _active={{
+                        background: 'red.600'
+                      }}
                     >
                       Buscar imóveis
                     </Button>
@@ -139,6 +147,25 @@ const Home: NextPage = () => {
             </TabPanels>
           </Tabs>
         </Flex>
+      </Flex>
+
+      <Flex as="section" p={12} direction="column">
+        <Heading
+          as="h1"
+          textTransform={'capitalize'}
+          fontWeight="bold"
+          fontSize={'4xl'}
+        >
+          Imóveis Populares
+        </Heading>
+
+        <Grid templateColumns={'repeat(3, 1fr)'} gap={6} mt={6}>
+          {Array.from(Array(6).keys()).map((i) => (
+            <GridItem w="100%" key={i}>
+              <HouseCard />
+            </GridItem>
+          ))}
+        </Grid>
       </Flex>
     </Box>
   )
