@@ -48,6 +48,7 @@ const Home: NextPage = () => {
           objectFit={'cover'}
           placeholder={'blur'}
           quality={100}
+          sizes={'1920px'}
         />
 
         <Flex width={'xl'} padding={8} bg="white" zIndex={1} direction="column">

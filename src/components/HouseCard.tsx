@@ -1,5 +1,14 @@
 import { Box, Flex, Icon, Text } from '@chakra-ui/react'
+import Image from 'next/image'
 import { RiHeartLine, RiHotelBedLine, RiRulerLine } from 'react-icons/ri'
+// import Image from 'next/image'
+import { Carousel, CarouselItem } from './Carousel'
+
+const images = [
+  'https://i.picsum.photos/id/1049/400/250.jpg?hmac=cYYI0-hDxy_zQPNCHSlAmNeFZQWar62P08T9qKvMSzc',
+  'https://i.picsum.photos/id/879/400/250.jpg?hmac=yiVHF5dDlgEt5EBQa8Y25mxUoZ-AlKB-GONqZ0psmk8',
+  'https://i.picsum.photos/id/493/400/250.jpg?hmac=Aug-iuFdKnb20RywtFrQKmEV1nZ-g_9tZRP3w_t_PFE'
+]
 
 export function HouseCard () {
   return (
@@ -15,7 +24,27 @@ export function HouseCard () {
       transitionDuration="0.25s"
       cursor={'pointer'}
     >
-      <Box h={250} background="gray.200" />
+      <Carousel>
+        {images.map((img, idx) => {
+          return (
+            <CarouselItem
+              key={idx}
+              height={250}
+              width="100%"
+              position={'relative'}
+            >
+              <Image
+                alt="Capa"
+                src={img}
+                layout={'fill'}
+                objectFit={'cover'}
+                sizes='100%'
+              />
+            </CarouselItem>
+          )
+        })}
+      </Carousel>
+
       <Box p={3}>
         <Text
           as="span"
