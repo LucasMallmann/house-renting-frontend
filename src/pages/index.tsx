@@ -24,7 +24,7 @@ import coverImage from '../../public/images/cover.jpg'
 
 const Home: NextPage = () => {
   return (
-    <Box as="main" mt={24}>
+    <Box as="main">
       <Flex
         h={670}
         maxWidth={1920}
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
           sizes={'1920px'}
         />
 
-        <Flex width={'xl'} padding={8} bg="white" zIndex={1} direction="column">
+        <Flex width={'xl'} padding={8} bg="white" zIndex={1} direction="column" maxWidth={1920}>
           <Heading as="h1" size={'2xl'} fontWeight="bold">
             Encontre a casa dos seus sonhos
           </Heading>
