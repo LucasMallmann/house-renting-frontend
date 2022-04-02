@@ -94,6 +94,7 @@ export function Carousel ({ children }: { children: React.ReactNode }) {
               align="center"
               justify={'center'}
               borderRadius="full"
+              zIndex={100}
             >
               <Icon as={RiArrowLeftLine} fontSize={20} />
             </Flex>
@@ -107,6 +108,7 @@ export function Carousel ({ children }: { children: React.ReactNode }) {
               outline: 'none',
               boxShadow: 'none'
             }}
+            zIndex={100}
           >
             <Flex
               bg="white"
@@ -130,6 +132,7 @@ export function Carousel ({ children }: { children: React.ReactNode }) {
         w="100%"
         justify="center"
         align={'center'}
+        zIndex={100}
       >
         {React.Children.map(children, (child, index) => {
           const isActive = index === activeIndex

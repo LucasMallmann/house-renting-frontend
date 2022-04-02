@@ -4,7 +4,15 @@ import { RiUser2Line } from 'react-icons/ri'
 
 export function Header () {
   return (
-    <Flex as={'header'} h={24} px={6} justify="space-between" align={'center'}>
+    <Flex
+      as={'header'}
+      h={24}
+      px={6}
+      justify="space-between"
+      align={'center'}
+      borderBottomWidth="1px"
+      borderBottomColor={'gray.200'}
+    >
       <Flex as="nav" align={'center'}>
         <Heading fontSize={'xl'} color="red.500" mr={4} p={0}>
           House

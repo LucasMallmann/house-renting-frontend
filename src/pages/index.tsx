@@ -51,7 +51,14 @@ const Home: NextPage = () => {
           sizes={'1920px'}
         />
 
-        <Flex width={'xl'} padding={8} bg="white" zIndex={1} direction="column" maxWidth={1920}>
+        <Flex
+          width={'xl'}
+          padding={8}
+          bg="white"
+          zIndex={1}
+          direction="column"
+          maxWidth={1920}
+        >
           <Heading as="h1" size={'2xl'} fontWeight="bold">
             Encontre a casa dos seus sonhos
           </Heading>

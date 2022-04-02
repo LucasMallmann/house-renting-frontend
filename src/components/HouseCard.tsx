@@ -1,7 +1,8 @@
 import { Box, Flex, Icon, Text } from '@chakra-ui/react'
 import Image from 'next/image'
+import NextLink from 'next/link'
+import { MouseEvent } from 'react'
 import { RiHeartLine, RiHotelBedLine, RiRulerLine } from 'react-icons/ri'
-// import Image from 'next/image'
 import { Carousel, CarouselItem } from './Carousel'
 
 const images = [
@@ -11,6 +12,10 @@ const images = [
 ]
 
 export function HouseCard () {
+  const handleLike = (e: MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation()
+  }
+
   return (
     <Flex
       direction={'column'}
@@ -38,61 +43,65 @@ export function HouseCard () {
                 src={img}
                 layout={'fill'}
                 objectFit={'cover'}
-                sizes='100%'
+                sizes="100%"
               />
             </CarouselItem>
           )
         })}
       </Carousel>
 
-      <Box p={3}>
-        <Text
-          as="span"
-          fontSize={'small'}
-          textTransform="capitalize"
-          color={'gray.600'}
-        >
-          Casa
-        </Text>
-        <Box mt={3}>
-          <Text fontWeight={'semibold'} color="gray.900">
-            Rua Rachel de Queiroz
+      <NextLink href={'imovel/id'}>
+        <Box p={3}>
+          <Text
+            as="span"
+            fontSize={'small'}
+            textTransform="capitalize"
+            color={'gray.600'}
+          >
+            Casa
           </Text>
-          <Text fontSize={'sm'} color="gray.600">
-            Vila Expedicionários, Cruzeiro
-          </Text>
-        </Box>
-        <Flex
-          direction={'row'}
-          mt={3}
-          align="center"
-          color="gray.700"
-          fontSize={'sm'}
-        >
-          <Text verticalAlign={'center'}>
-            <Icon as={RiRulerLine} /> 120 m²
-          </Text>
-          <Text ml={4}>
-            <Icon as={RiHotelBedLine} /> 3 quartos
-          </Text>
-        </Flex>
-        <Flex justify={'space-between'} mt={3} align="center">
-          <Text color="gray.700">Aluguel R$ 1.000,00</Text>
-          <Flex direction="row">
-            <Flex
-              borderRadius={'full'}
-              w={8}
-              h={8}
-              borderWidth="1px"
-              borderColor={'gray.400'}
-              align={'center'}
-              justify={'center'}
-            >
-              <Icon as={RiHeartLine} fontSize="20" color={'gray.600'} />
+          <Box mt={3}>
+            <Text fontWeight={'semibold'} color="gray.900">
+              Rua Rachel de Queiroz
+            </Text>
+            <Text fontSize={'sm'} color="gray.600">
+              Vila Expedicionários, Cruzeiro
+            </Text>
+          </Box>
+          <Flex
+            direction={'row'}
+            mt={3}
+            align="center"
+            color="gray.700"
+            fontSize={'sm'}
+          >
+            <Text verticalAlign={'center'}>
+              <Icon as={RiRulerLine} /> 120 m²
+            </Text>
+            <Text ml={4}>
+              <Icon as={RiHotelBedLine} /> 3 quartos
+            </Text>
+          </Flex>
+          <Flex justify={'space-between'} mt={3} align="center">
+            <Text color="gray.700">Aluguel R$ 1.000,00</Text>
+            <Flex direction="row">
+              <Flex
+                as={'button'}
+                borderRadius={'full'}
+                w={8}
+                h={8}
+                borderWidth="1px"
+                borderColor={'gray.400'}
+                align={'center'}
+                justify={'center'}
+                onClick={handleLike}
+              >
+                <Icon as={RiHeartLine} fontSize="20" color={'gray.600'} />
+              </Flex>
             </Flex>
           </Flex>
-        </Flex>
-      </Box>
+        </Box>
+      </NextLink>
     </Flex>
   )
 }
