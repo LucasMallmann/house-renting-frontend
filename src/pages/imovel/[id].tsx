@@ -201,8 +201,6 @@ const HousePage: NextPage = () => {
           </Flex>
         </GridItem>
       </Grid>
-
-      <Box bg="gray.200" h={1200} />
     </Flex>
   )
 }
