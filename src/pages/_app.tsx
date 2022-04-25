@@ -5,6 +5,7 @@ import { theme } from '@/config'
 import { Header } from '@/components/Header'
 
 import 'react-multi-carousel/lib/styles.css'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 function MyApp ({ Component, pageProps }: AppProps) {
   return (

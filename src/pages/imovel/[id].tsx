@@ -21,6 +21,7 @@ import { FaShower } from 'react-icons/fa'
 import { BsTextParagraph } from 'react-icons/bs'
 
 import Carousel from 'react-multi-carousel'
+import MapboxMap from '@/components/Mapbox'
 
 const images = [
   'https://i.picsum.photos/id/58/350/350.jpg?hmac=JlzT2Q8WTrPc88pgMgjz0b9BGGph1aPhA5B8jRQypTM',
@@ -72,7 +73,7 @@ const HousePage: NextPage = () => {
         mt={4}
         templateColumns="2fr 1fr"
       >
-        <GridItem h={800} mr={8}>
+        <GridItem mr={8} paddingBottom={24}>
           <Text fontSize={'3xl'} fontWeight="bold">
             Studio para alugar com 1 quarto, 50m²
           </Text>
@@ -97,22 +98,22 @@ const HousePage: NextPage = () => {
             borderColor="gray.400"
           >
             <Flex direction={'column'} align="center">
-              <Icon color='red.500' as={RiRulerLine} />
+              <Icon color="red.500" as={RiRulerLine} />
               <Text fontSize={'sm'}>90m²</Text>
             </Flex>
 
             <Flex direction={'column'} align="center">
-              <Icon color='red.500' as={RiHotelBedLine} />
+              <Icon color="red.500" as={RiHotelBedLine} />
               <Text fontSize={'sm'}>2 quartos</Text>
             </Flex>
 
             <Flex direction={'column'} align="center">
-              <Icon color='red.500' as={FaShower} />
+              <Icon color="red.500" as={FaShower} />
               <Text fontSize={'sm'}>1 banheiro</Text>
             </Flex>
 
             <Flex direction={'column'} align="center">
-              <Icon color='red.500' as={RiCarLine} />
+              <Icon color="red.500" as={RiCarLine} />
               <Text fontSize={'sm'}>1 vaga</Text>
             </Flex>
           </Stack>
@@ -120,24 +121,31 @@ const HousePage: NextPage = () => {
           <Box>
             <Flex align={'flex-start'}>
               <Icon fontSize={'lg'} as={BsTextParagraph} />
-              <Box paddingLeft={3} color='gray.700'>
-                <Text as='strong'>Sobre esse imóvel</Text>
-                <Text as='p' lineHeight={'tall'} mt={2}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aspernatur perferendis accusantium labore incidunt saepe
-                pariatur soluta sint delectus nisi, inventore nam, quia atque
-                architecto unde officia culpa doloribus mollitia officiis?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aspernatur perferendis accusantium labore incidunt saepe
-                pariatur soluta sint delectus nisi, inventore nam, quia atque
-                architecto unde officia culpa doloribus mollitia officiis?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aspernatur perferendis accusantium labore incidunt saepe
-                pariatur soluta sint delectus nisi, inventore nam, quia atque
-                architecto unde officia culpa doloribus mollitia officiis?
-              </Text>
+              <Box paddingLeft={3} color="gray.700">
+                <Text as="strong">Sobre esse imóvel</Text>
+                <Text as="p" lineHeight={'tall'} mt={2}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aspernatur perferendis accusantium labore incidunt saepe
+                  pariatur soluta sint delectus nisi, inventore nam, quia atque
+                  architecto unde officia culpa doloribus mollitia officiis?
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aspernatur perferendis accusantium labore incidunt saepe
+                  pariatur soluta sint delectus nisi, inventore nam, quia atque
+                  architecto unde officia culpa doloribus mollitia officiis?
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aspernatur perferendis accusantium labore incidunt saepe
+                  pariatur soluta sint delectus nisi, inventore nam, quia atque
+                  architecto unde officia culpa doloribus mollitia officiis?
+                </Text>
               </Box>
             </Flex>
+          </Box>
+
+          <Box h={450} w="100%" mt={8}>
+            <Text as="h2" fontSize={'2xl'} fontWeight="bold" mb={4}>
+              Como chegar?
+            </Text>
+            <MapboxMap />
           </Box>
         </GridItem>
 
@@ -194,7 +202,7 @@ const HousePage: NextPage = () => {
         </GridItem>
       </Grid>
 
-      <Box bg="blue.200" h={1200} />
+      <Box bg="gray.200" h={1200} />
     </Flex>
   )
 }
