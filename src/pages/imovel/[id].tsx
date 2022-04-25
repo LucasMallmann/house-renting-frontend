@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react'
 import { NextPage } from 'next'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import {
   RiCarLine,
   RiHotelBedLine,
@@ -21,7 +22,7 @@ import { FaShower } from 'react-icons/fa'
 import { BsTextParagraph } from 'react-icons/bs'
 
 import Carousel from 'react-multi-carousel'
-import MapboxMap from '@/components/Mapbox'
+const MapboxMap = dynamic(() => import('@/components/Mapbox'))
 
 const images = [
   'https://i.picsum.photos/id/58/350/350.jpg?hmac=JlzT2Q8WTrPc88pgMgjz0b9BGGph1aPhA5B8jRQypTM',

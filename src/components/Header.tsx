@@ -1,6 +1,7 @@
 import { Flex, Heading, Icon, Link, Text } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { RiUser2Line } from 'react-icons/ri'
+import { GiHouse } from 'react-icons/gi'
 
 export function Header () {
   return (
@@ -14,23 +15,28 @@ export function Header () {
       borderBottomColor={'gray.200'}
     >
       <Flex as="nav" align={'center'}>
-        <Heading fontSize={'xl'} color="red.500" mr={4} p={0}>
-          House
-        </Heading>
+        <NextLink href={'/'} passHref>
+          <Link style={{ textDecoration: 'none' }}>
+            <Heading fontSize={'xl'} color="red.500" mr={4} p={0}>
+              <Icon as={GiHouse} mr={1} />
+              House
+            </Heading>
+          </Link>
+        </NextLink>
 
         <NextLink href={'/'} passHref>
-          <Link ml={4}>Link</Link>
+          <Link ml={4}>Buscar imóveis</Link>
         </NextLink>
         <NextLink href={'/'} passHref>
-          <Link ml={4}>Link</Link>
+          <Link ml={4}>Indicar imóveis</Link>
         </NextLink>
         <NextLink href={'/'} passHref>
-          <Link ml={4}>Link</Link>
+          <Link ml={4}>Sobre</Link>
         </NextLink>
       </Flex>
 
       <Flex
-        as='button'
+        as="button"
         align={'center'}
         borderWidth="1px"
         p={3}

@@ -1,6 +1,7 @@
 import { Box, Flex, Icon, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import NextLink from 'next/link'
+// import { useRouter } from 'next/router'
 import { MouseEvent } from 'react'
 import { RiHeartLine, RiHotelBedLine, RiRulerLine } from 'react-icons/ri'
 import { Carousel, CarouselItem } from './Carousel'
@@ -15,6 +16,8 @@ export function HouseCard () {
   const handleLike = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation()
   }
+
+  // const router = useRouter()
 
   return (
     <Flex
@@ -50,7 +53,7 @@ export function HouseCard () {
         })}
       </Carousel>
 
-      <NextLink href={'imovel/id'}>
+      <NextLink href={'/imovel/id'} passHref>
         <a>
           <Box p={3}>
             <Text
