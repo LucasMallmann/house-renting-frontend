@@ -53,7 +53,7 @@ const HousePage: NextPage = () => {
     <Flex as="section" direction="column" position={'relative'}>
       <Carousel ssr itemClass="image-item" responsive={responsive}>
         {images.map((image, idx) => (
-          <Flex key={idx} height={300}>
+          <Flex key={idx} height={[300, 300, 300, 450]}>
             <Image
               alt="Capa"
               src={image}
@@ -71,7 +71,7 @@ const HousePage: NextPage = () => {
         width={'100%'}
         px={4}
         mt={4}
-        templateColumns="2fr 1fr"
+        templateColumns={['1fr', '1fr', '1fr', '2fr 1fr']}
       >
         <GridItem mr={8} paddingBottom={24}>
           <Text fontSize={'3xl'} fontWeight="bold">
@@ -141,7 +141,7 @@ const HousePage: NextPage = () => {
             </Flex>
           </Box>
 
-          <Box h={450} w="100%" mt={8}>
+          <Box h={450} w="100%" mt={8} mx='auto'>
             <Text as="h2" fontSize={'2xl'} fontWeight="bold" mb={4}>
               Como chegar?
             </Text>

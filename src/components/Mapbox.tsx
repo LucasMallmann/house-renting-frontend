@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 
 function MapboxMap () {
   // this is where the map instance will be stored after initialization
-  const [map, setMap] = useState<mapboxgl.Map>()
+  const [, setMap] = useState<mapboxgl.Map>()
 
   // React ref to store a reference to the DOM node that will be used
   // as a required parameter `container` when initializing the mapbox-gl
@@ -24,7 +24,7 @@ function MapboxMap () {
       container: node,
       accessToken: process.env.NEXT_PUBLIC_MAPBOX_TOKEN,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-74.5, 40],
+      center: { lng: -74.5, lat: 40 },
       zoom: 9
     })
 

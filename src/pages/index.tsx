@@ -157,7 +157,7 @@ const Home: NextPage = () => {
         </Flex>
       </Flex>
 
-      <Flex as="section" p={12} direction="column">
+      <Flex as="section" p={12} direction="column" maxWidth={1920} mx="auto">
         <Heading
           as="h1"
           textTransform={'capitalize'}
@@ -167,7 +167,17 @@ const Home: NextPage = () => {
           Imóveis Populares
         </Heading>
 
-        <Grid templateColumns={'repeat(3, 1fr)'} gap={6} mt={6}>
+        <Grid
+          templateColumns={[
+            'repeat(1, 1fr)',
+            'repeat(1, 1fr)',
+            'repeat(2, 1fr)',
+            'repeat(3, 1fr)',
+            'repeat(4, 1fr)'
+          ]}
+          gap={6}
+          mt={6}
+        >
           {Array.from(Array(6).keys()).map((i) => (
             <GridItem w="100%" key={i}>
               <HouseCard />
