@@ -30,6 +30,7 @@ export function Header () {
       </Flex>
 
       <Flex
+        as='button'
         align={'center'}
         borderWidth="1px"
         p={3}

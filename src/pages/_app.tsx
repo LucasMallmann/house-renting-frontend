@@ -4,6 +4,8 @@ import type { AppProps } from 'next/app'
 import { theme } from '@/config'
 import { Header } from '@/components/Header'
 
+import 'react-multi-carousel/lib/styles.css'
+
 function MyApp ({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider resetCSS theme={theme}>
