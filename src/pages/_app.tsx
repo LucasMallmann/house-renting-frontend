@@ -4,10 +4,12 @@ import { DefaultSeo } from 'next-seo'
 
 import { theme, SEO } from '@/config'
 import { Header } from '@/components/Header'
+import Footer from '@/components/Footer'
+
+import '@/server/createServer'
 
 import 'react-multi-carousel/lib/styles.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
-import Footer from '@/components/Footer'
 
 function MyApp ({ Component, pageProps }: AppProps) {
   return (
