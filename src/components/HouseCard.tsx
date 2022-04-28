@@ -6,18 +6,34 @@ import { MouseEvent } from 'react'
 import { RiHeartLine, RiHotelBedLine, RiRulerLine } from 'react-icons/ri'
 import { Carousel, CarouselItem } from './Carousel'
 
-const images = [
-  'https://i.picsum.photos/id/1049/400/250.jpg?hmac=cYYI0-hDxy_zQPNCHSlAmNeFZQWar62P08T9qKvMSzc',
-  'https://i.picsum.photos/id/879/400/250.jpg?hmac=yiVHF5dDlgEt5EBQa8Y25mxUoZ-AlKB-GONqZ0psmk8',
-  'https://i.picsum.photos/id/493/400/250.jpg?hmac=Aug-iuFdKnb20RywtFrQKmEV1nZ-g_9tZRP3w_t_PFE'
-]
+type Props = {
+  name: string;
+  address: {
+    neighbourhood: string;
+    street: string
+  };
+  images: string[];
+  price: number;
+  rooms: Record<string, unknown>;
+  area: number;
+};
 
-export function HouseCard () {
+export function HouseCard ({
+  name,
+  address,
+  images,
+  price,
+  rooms,
+  area
+}: Props) {
   const handleLike = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation()
   }
 
-  // const router = useRouter()
+  const formattedPrice = price.toLocaleString('pt-br', {
+    style: 'currency',
+    currency: 'BRL'
+  })
 
   return (
     <Flex
@@ -62,14 +78,14 @@ export function HouseCard () {
               textTransform="capitalize"
               color={'gray.600'}
             >
-              Casa
+              {name}
             </Text>
             <Box mt={3}>
               <Text fontWeight={'semibold'} color="gray.900">
-                Rua Rachel de Queiroz
+                {address.street}
               </Text>
               <Text fontSize={'sm'} color="gray.600">
-                Vila Expedicionários, Cruzeiro
+                {address.neighbourhood}
               </Text>
             </Box>
             <Flex
@@ -80,14 +96,14 @@ export function HouseCard () {
               fontSize={'sm'}
             >
               <Text verticalAlign={'center'}>
-                <Icon as={RiRulerLine} /> 120 m²
+                <Icon as={RiRulerLine} /> {area} m²
               </Text>
               <Text ml={4}>
-                <Icon as={RiHotelBedLine} /> 3 quartos
+                <Icon as={RiHotelBedLine} /> {rooms.bedrooms} quartos
               </Text>
             </Flex>
             <Flex justify={'space-between'} mt={3} align="center">
-              <Text color="gray.700">Aluguel R$ 1.000,00</Text>
+              <Text color="gray.700">Aluguel {formattedPrice}</Text>
               <Flex direction="row">
                 <Flex
                   as={'button'}

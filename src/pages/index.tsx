@@ -22,6 +22,12 @@ import { MdBed, MdHouse, MdLocationCity, MdMoney } from 'react-icons/md'
 
 import coverImage from '../../public/images/cover.jpg'
 
+const images = [
+  'https://i.picsum.photos/id/1049/400/250.jpg?hmac=cYYI0-hDxy_zQPNCHSlAmNeFZQWar62P08T9qKvMSzc',
+  'https://i.picsum.photos/id/879/400/250.jpg?hmac=yiVHF5dDlgEt5EBQa8Y25mxUoZ-AlKB-GONqZ0psmk8',
+  'https://i.picsum.photos/id/493/400/250.jpg?hmac=Aug-iuFdKnb20RywtFrQKmEV1nZ-g_9tZRP3w_t_PFE'
+]
+
 const Home: NextPage = () => {
   return (
     <Box as="main">
@@ -180,7 +186,18 @@ const Home: NextPage = () => {
         >
           {Array.from(Array(6).keys()).map((i) => (
             <GridItem w="100%" key={i}>
-              <HouseCard />
+              <HouseCard
+                name="Casa na praia"
+                address={{
+                  neighbourhood: 'Vila Expedicionários',
+                  street: 'Rua dos Expedicionários'
+                }}
+                area={100}
+                images={images}
+                price={1000}
+                rooms={{ bedrooms: 2 }}
+                key={i}
+              />
             </GridItem>
           ))}
         </Grid>
